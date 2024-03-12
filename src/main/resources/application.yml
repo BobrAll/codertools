@@ -3,6 +3,6 @@ server:
   ssl:
     key-alias: tomcat
     key-store: classpath:ssl/keystore.p12
-    key-store-password: rootroot
+    key-store-password:
     enabled: true
     key-store-type: PKCS12
