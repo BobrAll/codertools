@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пипетка</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/pipete.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Image</h1>
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="col-6">
+            <h1>Info</h1>
+            <input type="file" class="form-control" id="imageUpload" accept="image/*">
+<!--            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">-->
+            <div id="colorInfo"></div>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">RGB</th>
+                    <th scope="col">HEX</th>
+                    <th scope="col">CMYK</th>
+                </tr>
+                </thead>
+                <tbody id="result"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/pipette.js"></script>
+</body>
+</html>

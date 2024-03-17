@@ -1,0 +1,9 @@
+#canvas {
+    max-height: 100%;
+    max-width: 100%;
+    cursor: crosshair;
+}
+.color_demo {
+    width: 20px;
+    height: 20px;
+}
