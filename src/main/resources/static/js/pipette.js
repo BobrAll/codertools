@@ -3,11 +3,20 @@ const ctx = canvas.getContext('2d');
 const imageUpload = document.getElementById('imageUpload');
 const colorResult = document.getElementById("result");
 
-var colorCounter = 0;
+let colorCounter = 0;
+let img = new Image();
+img.src = '/img/pipette_demo.jpg';
+img.onload = function () {
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    ctx.drawImage(img, 0, 0);
+}
 
 function getPixelAtPosition(x, y) {
-    rect = canvas.getBoundingClientRect();
-    let coef = canvas.width / rect.width;
+    let rect = canvas.getBoundingClientRect();
+    const coef = canvas.width / rect.width;
+
     return ctx.getImageData((x - rect.left) * coef, (y - rect.top) * coef, 1, 1).data;
 }
 
@@ -16,6 +25,7 @@ imageUpload.addEventListener('change', function(event) {
     if (!file) return;
 
     const reader = new FileReader();
+
     reader.onload = function(e) {
         const image = new Image();
 
@@ -38,12 +48,10 @@ canvas.addEventListener('click', function(event) {
 
     const pixel = getPixelAtPosition(x, y);
 
-    var r = pixel[0];
-    var g = pixel[1];
-    var b = pixel[2];
-    var rgb = `rgb(${r}, ${g}, ${b})`;
-    // colorInfo.style.backgroundColor = color;
-
+    const r = pixel[0];
+    const g = pixel[1];
+    const b = pixel[2];
+    const rgb = `rgb(${r}, ${g}, ${b})`;
 
     colorResult.innerHTML += `
             <th scope="row">${++colorCounter}</th>
@@ -59,7 +67,7 @@ function rgbToHex(r, g, b) {
 }
 
 function rgbToCmyk(r, g, b) {
-    var c = 1 - r / 255, m = 1 - g / 255, y = 1 - b / 255, k = Math.min(c, Math.min(m, y));
+    let c = 1 - r / 255, m = 1 - g / 255, y = 1 - b / 255, k = Math.min(c, Math.min(m, y));
 
     c = Math.round((c - k) / (1 - k) * 100);
     m = Math.round((m - k) / (1 - k) * 100);
