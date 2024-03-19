@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Пипетка</title>
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="/css/pipette.css" rel="stylesheet">
 
     <!-- Yandex.Metrika counter -->
@@ -30,19 +30,21 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm">
-            <h1>Image</h1>
             <div class="outer_border">
                 <div class="frame">
                     <canvas id="canvas"></canvas>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-6">
-            <h1>Info</h1>
+        <div id="info" class="col-12 col-sm-6">
+            <h1>Пипетка</h1>
+            <p>Для определения цвета - нажмите в любой точке изображения</p>
+            <label for="imageUpload">Загрузить свое изображение</label>
             <input type="file" class="form-control" id="imageUpload" accept="image/*">
+            <h1>Цвета</h1>
 <!--            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">-->
             <div id="colorInfo"></div>
-            <table class="table">
+            <table class="table table-bordered">
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
@@ -58,7 +60,7 @@
     </div>
 </div>
 
-<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="/js/pipette.js"></script>
 </body>
 </html>

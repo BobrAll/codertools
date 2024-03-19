@@ -20,3 +20,13 @@
     align-items: center;
     display: flex;
 }
+
+#result {
+    font-size: 1.14vw;
+}
+
+@media (max-width: 575px) {
+    #result {
+        font-size: 2.5vw;
+    }
+}
