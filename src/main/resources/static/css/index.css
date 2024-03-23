@@ -1,0 +1,36 @@
+:root {
+    --color1: #05b1b1;
+    --color2: #52339a;
+}
+header, footer, section {
+    padding: 50px;
+}
+
+header, footer {
+    background: linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
+}
+
+.instrument-icon {
+    display: block;
+    margin: 3vh auto 1vh;
+    width: clamp(64px, 13vmin, 256px);
+    height: clamp(64px, 13vmin, 256px);
+}
+
+.card {
+    margin: 1vmin;
+    padding: 0;
+}
+
+p {
+    font-size: 2.1vmin;
+}
+
+h4 {
+    font-size: clamp(20px, 2vw, 35px);
+}
+
+header {
+    margin-bottom: 7vmin;
+}
+
