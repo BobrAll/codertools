@@ -4,13 +4,13 @@ const imageUpload = document.getElementById('imageUpload');
 const colorResult = document.getElementById("result");
 
 let colorCounter = 0;
-let img = new Image();
-img.src = '/img/pipette_demo.jpg';
-img.onload = function () {
-    canvas.width = img.width;
-    canvas.height = img.height;
 
-    ctx.drawImage(img, 0, 0);
+init()
+
+function init() {
+    const img = new Image();
+    img.src = '/img/pipette_demo.jpg';
+    img.onload = function () {draw_image(img)}
 }
 
 function getPixelAtPosition(x, y) {
@@ -27,16 +27,10 @@ imageUpload.addEventListener('change', function(event) {
     const reader = new FileReader();
 
     reader.onload = function(e) {
-        const image = new Image();
+        const img = new Image();
 
-        image.onload = function() {
-            canvas.width = image.width;
-            canvas.height = image.height;
-
-            ctx.drawImage(image, 0, 0);
-        };
-
-        image.src = e.target.result;
+        img.onload = function() {draw_image(img)};
+        img.src = e.target.result;
     };
 
     reader.readAsDataURL(file);
@@ -74,4 +68,11 @@ function rgbToCmyk(r, g, b) {
     y = Math.round((y - k) / (1 - k) * 100);
 
     return `CMYK(${c}%, ${m}%, ${y}%, ${Math.round(k * 100)}%)`;
+}
+
+function draw_image(img) {
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    ctx.drawImage(img, 0, 0);
 }
