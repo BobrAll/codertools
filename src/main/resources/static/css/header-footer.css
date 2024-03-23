@@ -1,0 +1,13 @@
+:root {
+    --color1: #05b1b1;
+    --color2: #52339a;
+}
+
+header, footer {
+    padding: 7vmin;
+    background: linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
+}
+
+header {
+    margin-bottom: 5vmin;
+}

@@ -1,15 +1,3 @@
-:root {
-    --color1: #05b1b1;
-    --color2: #52339a;
-}
-header, footer, section {
-    padding: 50px;
-}
-
-header, footer {
-    background: linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
-}
-
 .instrument-icon {
     display: block;
     margin: 3vh auto 1vh;
@@ -20,6 +8,12 @@ header, footer {
 .card {
     margin: 1vmin;
     padding: 0;
+}
+
+.card:hover {
+    cursor: pointer;
+    border-width: 0.7vmin;
+    border-color: var(--color1);
 }
 
 p {
@@ -33,4 +27,3 @@ h4 {
 header {
     margin-bottom: 7vmin;
 }
-
