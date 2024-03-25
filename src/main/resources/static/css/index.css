@@ -13,7 +13,16 @@
 .card:hover {
     cursor: pointer;
     border-width: 0.7vmin;
-    border-color: var(--color1);
+    border-color: black;
+    background-color: var(--color1)
+}
+
+.blocked:hover {
+    cursor: pointer;
+    border-width: 0.7vmin;
+    border-color: black;
+    color: black;
+    background-color: var(--color2)
 }
 
 p {
